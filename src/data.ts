@@ -1,4 +1,7 @@
 import { BusinessInfo, Feature, ProcessStep, Review, Service } from './types';
+import image1 from './assets/images/regenerated_image_1789296572546.jpg';
+import image2 from './assets/images/regenerated_image_1789296571629.jpg';
+import image3 from './assets/images/regenerated_image_1789296570558.jpg';
 
 export const businessInfo: BusinessInfo = {
   name: "The Luxe Crown Hair Studio",
@@ -42,19 +45,19 @@ export const solutions: Service[] = [
     id: "replacement",
     title: "Hair Replacement",
     description: "Personalized hair replacement solutions designed to create a natural-looking appearance.",
-    image: "/src/assets/images/regenerated_image_1789296572546.jpg"
+    image: image1
   },
   {
     id: "transformation",
     title: "Hair Transformation",
     description: "Explore different styles, looks and solutions tailored to your desired appearance.",
-    image: "/src/assets/images/regenerated_image_1789296571629.jpg"
+    image: image2
   },
   {
     id: "consultation",
     title: "Personalized Consultation",
     description: "Discuss your preferences, concerns and desired outcome privately with the studio team.",
-    image: "/src/assets/images/regenerated_image_1789296570558.jpg"
+    image: image3
   },
   {
     id: "styling",

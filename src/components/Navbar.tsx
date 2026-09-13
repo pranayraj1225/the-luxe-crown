@@ -63,7 +63,7 @@ export function Navbar() {
               ))}
             </ul>
             <div className="w-[1px] h-4 ml-2 mr-2 transition-colors duration-500 bg-white/30"></div>
-            <Button href="#booking" size="sm">
+            <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" size="sm">
               Book a Consultation
             </Button>
           </nav>
@@ -100,7 +100,7 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-12 flex justify-center">
-            <Button href="#booking" onClick={() => setIsMobileMenuOpen(false)}>
+            <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               Book a Consultation
             </Button>
           </div>

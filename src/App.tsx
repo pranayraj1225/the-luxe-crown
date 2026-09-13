@@ -1,5 +1,4 @@
 import { About } from '@/components/About';
-import { Booking } from '@/components/Booking';
 import { Contact } from '@/components/Contact';
 import { Experience } from '@/components/Experience';
 import { Footer } from '@/components/Footer';
@@ -20,7 +19,6 @@ export default function App() {
         <About />
         <Solutions />
         <Experience />
-        <Booking />
         <Location />
         <Contact />
       </main>

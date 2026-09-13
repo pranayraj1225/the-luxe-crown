@@ -49,7 +49,9 @@ export function Hero() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
             <Button 
-              href="#booking"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-4 uppercase tracking-widest text-xs"
             >
               Book an Appointment
