@@ -1,5 +1,5 @@
 import { businessInfo, defaultWhatsAppMessage } from '@/data';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Crown } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from './ui/Button';
 
@@ -30,19 +30,22 @@ export function Navbar() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-brand-ivory/90 backdrop-blur-md py-4 border-b border-brand-charcoal/10' 
+            ? 'bg-brand-black/95 backdrop-blur-md py-4 border-b border-white/5' 
             : 'bg-transparent py-6'
         }`}
       >
         <div className="w-full px-4 md:px-8 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex flex-col">
-            <a href="#" className={`font-serif text-2xl md:text-3xl tracking-wide uppercase leading-none transition-colors duration-500 ${isScrolled ? 'text-brand-charcoal' : 'text-white drop-shadow-sm'}`}>
-              The Luxe Crown
-            </a>
-            <span className={`font-sans text-[0.65rem] tracking-[0.3em] uppercase mt-1 transition-colors duration-500 ${isScrolled ? 'text-brand-gold' : 'text-brand-gold drop-shadow-sm'}`}>
-              Hair Studio
-            </span>
+          <div className="flex items-center gap-3">
+            <Crown className={`w-8 h-8 transition-colors duration-500 ${isScrolled ? 'text-brand-gold' : 'text-brand-gold drop-shadow-sm'}`} strokeWidth={1.5} />
+            <div className="flex flex-col">
+              <a href="#" className="font-serif text-2xl md:text-3xl tracking-wide uppercase leading-none text-white drop-shadow-sm">
+                The Luxe Crown
+              </a>
+              <span className="font-sans text-[0.65rem] tracking-[0.3em] uppercase mt-1 text-brand-gold drop-shadow-sm">
+                Hair Studio
+              </span>
+            </div>
           </div>
 
           {/* Desktop Nav */}
@@ -52,22 +55,22 @@ export function Navbar() {
                 <li key={link.name}>
                   <a 
                     href={link.href} 
-                    className={`font-sans text-xs uppercase tracking-widest transition-colors duration-300 ${isScrolled ? 'text-brand-charcoal/80 hover:text-brand-gold' : 'text-white/90 hover:text-white drop-shadow-sm'}`}
+                    className={`font-sans text-xs uppercase tracking-widest transition-colors duration-300 ${isScrolled ? 'text-white/80 hover:text-brand-gold' : 'text-white/90 hover:text-white drop-shadow-sm'}`}
                   >
                     {link.name}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className={`w-[1px] h-4 ml-2 mr-2 transition-colors duration-500 ${isScrolled ? 'bg-brand-charcoal/20' : 'bg-white/30'}`}></div>
-            <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" size="sm">
+            <div className="w-[1px] h-4 ml-2 mr-2 transition-colors duration-500 bg-white/30"></div>
+            <Button href="#booking" size="sm">
               Book a Consultation
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button 
-            className={`lg:hidden p-2 transition-colors duration-500 ${isScrolled ? 'text-brand-charcoal' : 'text-white drop-shadow-sm'}`}
+            className="lg:hidden p-2 transition-colors duration-500 text-white drop-shadow-sm"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -78,7 +81,7 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 bg-brand-ivory z-40 transition-transform duration-500 ease-in-out lg:hidden ${
+        className={`fixed inset-0 bg-brand-black z-40 transition-transform duration-500 ease-in-out lg:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -88,7 +91,7 @@ export function Navbar() {
               <li key={link.name}>
                 <a 
                   href={link.href} 
-                  className="font-serif text-3xl text-brand-charcoal hover:text-brand-gold transition-colors duration-300"
+                  className="font-serif text-3xl text-white hover:text-brand-gold transition-colors duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -97,7 +100,7 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-12 flex justify-center">
-            <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <Button href="#booking" onClick={() => setIsMobileMenuOpen(false)}>
               Book a Consultation
             </Button>
           </div>

@@ -6,6 +6,7 @@ import { Button } from './ui/Button';
 export function Location() {
   // Simple map search query URL for the exact address
   const mapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(businessInfo.address)}`;
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
     <section className="py-24 bg-brand-ivory">
@@ -52,16 +53,24 @@ export function Location() {
             </Button>
           </div>
 
-          <div className="aspect-square md:aspect-[4/3] bg-white border border-brand-charcoal/10 p-2 relative">
-             <iframe 
-                title="Google Maps Location"
-                src={`https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY_HERE&q=${encodeURIComponent(businessInfo.address)}`} 
-                className="w-full h-full grayscale opacity-80 mix-blend-luminosity hover:grayscale-0 hover:opacity-100 hover:mix-blend-normal transition-all duration-700"
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+          <div className="aspect-square md:aspect-[4/3] bg-white border border-brand-charcoal/10 p-2 relative flex items-center justify-center">
+             {apiKey ? (
+               <iframe 
+                  title="Google Maps Location"
+                  src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(businessInfo.address)}`} 
+                  className="w-full h-full grayscale opacity-80 mix-blend-luminosity hover:grayscale-0 hover:opacity-100 hover:mix-blend-normal transition-all duration-700"
+                  style={{ border: 0 }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+             ) : (
+                <div className="text-center p-6 flex flex-col items-center justify-center h-full w-full bg-brand-ivory/50">
+                  <MapPin className="w-10 h-10 text-brand-charcoal/30 mb-4" />
+                  <p className="font-sans text-sm text-brand-charcoal/60 mb-2">Map configuration required</p>
+                  <p className="font-sans text-xs text-brand-charcoal/40">Please configure the VITE_GOOGLE_MAPS_API_KEY environment variable.</p>
+                </div>
+             )}
           </div>
 
         </div>

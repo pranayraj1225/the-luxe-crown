@@ -4,12 +4,12 @@
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Manrope", sans-serif;
   
-  --color-brand-black: #0A0A0A;
-  --color-brand-charcoal: #111111;
+  --color-brand-black: #080808;
+  --color-brand-charcoal: #151515;
   --color-brand-dark: #1A1A1A;
-  --color-brand-ivory: #F5F5F0;
-  --color-brand-gold: #D4AF37;
-  --color-brand-gold-muted: #B89730;
+  --color-brand-ivory: #F5F0E8;
+  --color-brand-gold: #C9A45C;
+  --color-brand-gold-muted: #B38E4B;
   --color-brand-burgundy: #4A1C20;
 }
 
