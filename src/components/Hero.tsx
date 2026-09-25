@@ -3,55 +3,53 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen md:min-h-0 md:h-[600px] w-full flex flex-col justify-start md:block overflow-hidden">
-      {/* Background Image: Mobile (portrait) & Desktop (wide with woman on the right) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+    <section className="relative min-h-screen flex flex-col justify-start md:justify-center overflow-hidden">
+      {/* Background Image: Mobile (uploaded portrait) & Desktop (salon interior) */}
+      <div className="absolute inset-0 z-0">
         {/* Mobile Background */}
         <img 
           src="/Gemini_Generated_Image_fryuelfryuelfryu.png" 
           alt="The Luxe Crown Hair Model"
           onError={(e) => {
+            // Fallback to /image.png if needed
             (e.currentTarget as HTMLImageElement).src = '/image.png';
           }}
           className="w-full h-full object-cover object-top md:hidden"
         />
-        {/* Desktop Background: 100% width x 600px height with model positioned on the right */}
+        {/* Desktop Background */}
         <img 
           src="/143.png" 
-          alt="The Luxe Crown Hair Model"
-          className="hidden md:block w-full h-full object-cover object-right"
+          alt="Premium hair salon interior"
+          className="hidden md:block w-full h-full object-cover object-center scale-105"
         />
       </div>
 
-      {/* Hero Content Container: 620px width, left 65px, top 110px on desktop */}
-      <div className="relative z-30 w-full px-4 sm:px-8 pt-24 sm:pt-28 pb-12 flex flex-col justify-start items-center md:pt-0 md:pb-0 md:px-0 md:absolute md:left-[65px] md:top-[110px] md:w-[620px]">
+      <div className="relative z-30 w-full px-4 sm:px-8 lg:pl-[8%] lg:pr-10 flex flex-col justify-start md:justify-center items-center lg:items-start pt-24 sm:pt-28 pb-12 md:py-24 md:my-auto">
         <motion.div
           initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0 }}
-          className="flex flex-col items-center text-center w-full max-w-sm sm:max-w-md md:max-w-none"
+          className="flex flex-col items-center text-center w-full max-w-sm sm:max-w-md lg:max-w-[48%] xl:max-w-[45%]"
         >
-          {/* Crown Icon: 48px x 48px */}
-          <Crown className="w-8 h-8 sm:w-10 sm:h-10 md:w-[48px] md:h-[48px] text-brand-gold opacity-95 mx-auto drop-shadow-sm" strokeWidth={1.5} />
-          
-          {/* "The Luxe Crown": 11px font, 4px letter spacing, gold */}
-          <div className="font-sans text-[10px] sm:text-xs md:text-[11px] tracking-[0.25em] md:tracking-[4px] uppercase text-brand-gold mt-2 md:mt-[14px] mb-2.5 md:mb-[16px] text-center w-full drop-shadow-sm font-medium">
+          {/* Logo Treatment */}
+          <Crown className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-brand-gold mb-2 md:mb-6 opacity-95 mx-auto drop-shadow-sm" strokeWidth={1.5} />
+          <div className="font-sans text-[10px] sm:text-xs md:text-sm tracking-[0.25em] md:tracking-[0.3em] uppercase text-brand-gold mb-3 md:mb-8 text-center w-full drop-shadow-sm font-medium">
             The Luxe Crown
           </div>
 
-          {/* "CROWN YOUR STYLE.": 64px font, two lines, line-height 0.95, letter-spacing -1.5px, max width ~500px */}
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-[64px] leading-[1.08] md:leading-[0.95] md:tracking-[-1.5px] text-white font-normal inline-block text-center drop-shadow-md md:max-w-[500px] mx-auto">
+          {/* Headline */}
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl lg:text-[6rem] leading-[1.08] md:leading-[1.05] mb-2.5 md:mb-6 text-white tracking-tight inline-block text-center drop-shadow-md">
             <span className="block whitespace-nowrap">CROWN YOUR</span>
             <span className="block text-center">STYLE.</span>
           </h1>
           
-          {/* "Premium Hair • Beauty • Grooming": 20px, italic serif, gold, margin-top ~27px */}
-          <h2 className="font-serif italic text-xs sm:text-sm md:text-[20px] text-brand-gold/95 mt-2.5 md:mt-[27px] font-light text-center w-full drop-shadow-sm">
+          {/* Subheading */}
+          <h2 className="font-serif italic text-xs sm:text-sm md:text-3xl text-brand-gold/95 mb-3 md:mb-8 font-light text-center w-full drop-shadow-sm">
             Premium Hair &bull; Beauty &bull; Grooming
           </h2>
 
-          {/* Description: 13px, line-height 1.55, width ~390px, margin-top ~29px */}
-          <p className="font-sans text-[11px] sm:text-xs md:text-[13px] md:leading-[1.55] text-white/80 mt-3 md:mt-[29px] max-w-xs sm:max-w-md md:max-w-none md:w-[390px] font-light tracking-wide text-center mx-auto drop-shadow-sm">
+          {/* Supporting Text */}
+          <p className="font-sans text-[11px] sm:text-xs md:text-base text-white/80 max-w-xs sm:max-w-md font-light leading-relaxed tracking-wide text-center mx-auto drop-shadow-sm">
             Experience exceptional hair artistry, refined grooming, and an atmosphere designed for those who expect more.
           </p>
         </motion.div>

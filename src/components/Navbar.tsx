@@ -1,5 +1,5 @@
 import { businessInfo, defaultWhatsAppMessage } from '@/data';
-import { Menu, X, Crown } from 'lucide-react';
+import { Menu, X, Crown, Calendar } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from './ui/Button';
 
@@ -31,56 +31,74 @@ export function Navbar() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-brand-black/95 backdrop-blur-md py-3 shadow-lg' 
-            : 'bg-transparent'
+            ? 'bg-brand-black/95 backdrop-blur-md py-3.5 lg:py-4' 
+            : 'bg-transparent py-4.5 sm:py-5 lg:py-6'
         }`}
       >
-        <div className="w-full px-4 sm:px-8 md:px-[40px] md:pt-[20px] md:pb-[10px] flex items-center justify-between">
+        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <Crown className={`w-[26px] h-[26px] transition-colors duration-500 ${isScrolled ? 'text-brand-gold' : 'text-brand-gold drop-shadow-sm'}`} strokeWidth={1.5} />
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <Crown className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-brand-gold shrink-0 drop-shadow-sm" strokeWidth={1.5} />
             <div className="flex flex-col">
-              <a href="#" className="font-serif text-xl sm:text-2xl md:text-[24px] tracking-wide uppercase leading-none text-white drop-shadow-sm">
+              <a href="#" className="font-serif text-base sm:text-lg lg:text-3xl tracking-wide uppercase leading-tight text-white drop-shadow-sm font-medium">
                 The Luxe Crown
               </a>
-              <span className="font-sans text-[0.65rem] md:text-[8.5px] tracking-[2px] uppercase mt-1 text-brand-gold drop-shadow-sm">
+              <span className="font-sans text-[7px] sm:text-[8px] lg:text-[0.65rem] tracking-[0.25em] lg:tracking-[0.3em] uppercase text-brand-gold drop-shadow-sm">
                 Hair Studio
               </span>
             </div>
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-[28px]">
-            <ul className="flex items-center gap-[28px]">
+          <nav className="hidden lg:flex items-center gap-8">
+            <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a 
                     href={link.href} 
-                    className="font-sans text-[10px] uppercase tracking-wider text-white/90 hover:text-white transition-colors duration-300 drop-shadow-sm"
+                    className={`font-sans text-xs uppercase tracking-widest transition-colors duration-300 ${isScrolled ? 'text-white/80 hover:text-brand-gold' : 'text-white/90 hover:text-white drop-shadow-sm'}`}
                   >
                     {link.name}
                   </a>
                 </li>
               ))}
             </ul>
-            <a 
-              href={whatsappUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-[151px] h-[32px] text-[10px] font-sans tracking-wider uppercase font-semibold text-white bg-transparent border border-white/80 hover:bg-white hover:text-black transition-all flex items-center justify-center shrink-0"
-            >
+            <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" size="sm">
               Book a Consultation
-            </a>
+            </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden p-2 transition-colors duration-500 text-white drop-shadow-sm"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Right Action Area: Consultation Button + Gold Hamburger */}
+          <div className="flex lg:hidden items-center gap-2 sm:gap-3">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 border border-brand-gold/90 rounded-xl bg-brand-black/40 backdrop-blur-xs text-brand-gold hover:bg-brand-gold/10 transition-colors shadow-xs"
+            >
+              <Calendar className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+              <div className="flex flex-col text-left leading-[1.05]">
+                <span className="text-[7.5px] sm:text-[8px] tracking-wider uppercase font-semibold text-brand-gold">BOOK A</span>
+                <span className="text-[7.5px] sm:text-[8px] tracking-wider uppercase font-semibold text-brand-gold">CONSULTATION</span>
+              </div>
+            </a>
+
+            <button 
+              className="p-1.5 flex items-center justify-center text-brand-gold cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-brand-gold" />
+              ) : (
+                <div className="w-6 h-3.5 flex flex-col justify-between">
+                  <span className="w-full h-[2px] bg-brand-gold rounded-full"></span>
+                  <span className="w-full h-[2px] bg-brand-gold rounded-full"></span>
+                  <span className="w-full h-[2px] bg-brand-gold rounded-full"></span>
+                </div>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
