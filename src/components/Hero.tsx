@@ -57,8 +57,8 @@ export function Hero() {
             Experience exceptional hair artistry, refined grooming, and an atmosphere designed for those who expect more.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-row gap-3 sm:gap-4 w-full justify-center items-center mt-5 md:mt-7">
+          {/* CTAs - Desktop only */}
+          <div className="hidden md:flex flex-row gap-3 sm:gap-4 w-full justify-center items-center mt-5 md:mt-7">
             <Button 
               href={whatsappUrl}
               target="_blank"
