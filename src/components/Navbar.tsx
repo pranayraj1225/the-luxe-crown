@@ -29,44 +29,53 @@ export function Navbar() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-brand-black/95 backdrop-blur-md py-3.5 lg:py-4' 
-            : 'bg-transparent py-4.5 sm:py-5 lg:py-6'
+            ? 'bg-brand-black/95 backdrop-blur-md py-3 lg:py-4' 
+            : 'bg-transparent py-4.5 sm:py-5 lg:py-0'
         }`}
       >
-        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
-            <Crown className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-brand-gold shrink-0 drop-shadow-sm" strokeWidth={1.5} />
+        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-[40px] lg:pt-[20px] lg:pb-4 flex items-center justify-between">
+          {/* Logo: Left 40px, Top 20px on desktop */}
+          <div className="flex items-center gap-3">
+            <Crown className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[26px] lg:h-[26px] text-brand-gold shrink-0 drop-shadow-sm" strokeWidth={1.5} />
             <div className="flex flex-col">
-              <a href="#" className="font-serif text-base sm:text-lg lg:text-3xl tracking-wide uppercase leading-tight text-white drop-shadow-sm font-medium">
+              <a href="#" className="font-serif text-base sm:text-lg lg:text-[24px] tracking-wide uppercase leading-none text-white drop-shadow-sm font-medium">
                 The Luxe Crown
               </a>
-              <span className="font-sans text-[7px] sm:text-[8px] lg:text-[0.65rem] tracking-[0.25em] lg:tracking-[0.3em] uppercase text-brand-gold drop-shadow-sm">
+              <span className="font-sans text-[7.5px] sm:text-[8px] lg:text-[8.5px] tracking-[2px] uppercase text-brand-gold/80 mt-1 drop-shadow-sm">
                 Hair Studio
               </span>
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href} 
-                    className={`font-sans text-xs uppercase tracking-widest transition-colors duration-300 ${isScrolled ? 'text-white/80 hover:text-brand-gold' : 'text-white/90 hover:text-white drop-shadow-sm'}`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" size="sm">
+          {/* Desktop Nav & CTA: 10px font, ~28px gap, CTA 151x32px at right 40px, top 23px */}
+          <div className="hidden lg:flex items-center gap-[28px]">
+            <nav>
+              <ul className="flex items-center gap-[28px]">
+                {navLinks.map((link) => (
+                  <li key={link.name}>
+                    <a 
+                      href={link.href} 
+                      className={`font-sans text-[10px] uppercase tracking-[0.15em] transition-colors duration-200 font-medium ${
+                        isScrolled ? 'text-white/80 hover:text-brand-gold' : 'text-white/90 hover:text-brand-gold drop-shadow-sm'
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[151px] h-[32px] flex items-center justify-center bg-brand-black/80 hover:bg-brand-gold hover:text-brand-black border border-brand-gold/60 text-white font-sans text-[9.5px] font-semibold tracking-wider uppercase transition-all duration-300 rounded-[2px] shadow-sm"
+            >
               Book a Consultation
-            </Button>
-          </nav>
+            </a>
+          </div>
 
           {/* Mobile Right Action Area: Consultation Button + Gold Hamburger */}
           <div className="flex lg:hidden items-center gap-2 sm:gap-3">

@@ -24,32 +24,32 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-30 w-full px-4 sm:px-8 lg:pl-[8%] lg:pr-10 flex flex-col justify-start md:justify-center items-center lg:items-start pt-24 sm:pt-28 pb-12 md:py-24 md:my-auto">
+      <div className="relative z-30 w-full px-4 sm:px-8 lg:pl-[7%] lg:pr-10 flex flex-col justify-start md:justify-center items-center lg:items-start pt-24 sm:pt-28 pb-12 md:py-16 md:my-auto">
         <motion.div
           initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0 }}
-          className="flex flex-col items-center text-center w-full max-w-sm sm:max-w-md lg:max-w-[48%] xl:max-w-[45%]"
+          className="flex flex-col items-center text-center w-full max-w-sm sm:max-w-md lg:max-w-[42%] xl:max-w-[38%]"
         >
           {/* Logo Treatment */}
-          <Crown className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-brand-gold mb-2 md:mb-6 opacity-95 mx-auto drop-shadow-sm" strokeWidth={1.5} />
-          <div className="font-sans text-[10px] sm:text-xs md:text-sm tracking-[0.25em] md:tracking-[0.3em] uppercase text-brand-gold mb-3 md:mb-8 text-center w-full drop-shadow-sm font-medium">
+          <Crown className="w-7 h-7 sm:w-8 sm:h-8 md:w-11 md:h-11 text-brand-gold mb-2 md:mb-4 opacity-95 mx-auto drop-shadow-sm" strokeWidth={1.5} />
+          <div className="font-sans text-[10px] sm:text-xs tracking-[0.25em] uppercase text-brand-gold mb-2.5 md:mb-4 text-center w-full drop-shadow-sm font-medium">
             The Luxe Crown
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl lg:text-[6rem] leading-[1.08] md:leading-[1.05] mb-2.5 md:mb-6 text-white tracking-tight inline-block text-center drop-shadow-md">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] md:leading-[1.1] mb-2.5 md:mb-4 text-white tracking-tight inline-block text-center drop-shadow-md">
             <span className="block whitespace-nowrap">CROWN YOUR</span>
             <span className="block text-center">STYLE.</span>
           </h1>
           
           {/* Subheading */}
-          <h2 className="font-serif italic text-xs sm:text-sm md:text-3xl text-brand-gold/95 mb-3 md:mb-8 font-light text-center w-full drop-shadow-sm">
+          <h2 className="font-serif italic text-xs sm:text-sm md:text-lg lg:text-xl text-brand-gold/95 mb-2.5 md:mb-4 font-light text-center w-full drop-shadow-sm">
             Premium Hair &bull; Beauty &bull; Grooming
           </h2>
 
           {/* Supporting Text */}
-          <p className="font-sans text-[11px] sm:text-xs md:text-base text-white/80 max-w-xs sm:max-w-md font-light leading-relaxed tracking-wide text-center mx-auto drop-shadow-sm">
+          <p className="font-sans text-[11px] sm:text-xs md:text-sm text-white/80 max-w-xs sm:max-w-md font-light leading-relaxed tracking-wide text-center mx-auto drop-shadow-sm">
             Experience exceptional hair artistry, refined grooming, and an atmosphere designed for those who expect more.
           </p>
         </motion.div>
