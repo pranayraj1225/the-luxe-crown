@@ -31,7 +31,7 @@ export function Location() {
             
             <div className="space-y-6 font-sans text-brand-charcoal/80 font-light mb-10">
               <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-brand-gold shrink-0 mt-1" />
+                <MapPin className="w-6 h-6 text-brand-black fill-brand-black shrink-0 mt-1" />
                 <p className="leading-relaxed max-w-sm">
                   {businessInfo.address}
                 </p>

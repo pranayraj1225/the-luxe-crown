@@ -2,6 +2,7 @@ import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Experience } from '@/components/Experience';
 import { Footer } from '@/components/Footer';
+import { Gallery } from '@/components/Gallery';
 import { Hero } from '@/components/Hero';
 import { Location } from '@/components/Location';
 import { MobileActionBar } from '@/components/MobileActionBar';
@@ -18,6 +19,7 @@ export default function App() {
         <TrustBar />
         <About />
         <Solutions />
+        <Gallery />
         <Experience />
         <Location />
         <Contact />
