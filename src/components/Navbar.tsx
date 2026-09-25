@@ -35,9 +35,9 @@ export function Navbar() {
             : 'bg-transparent py-4.5 sm:py-5 lg:py-6'
         }`}
       >
-        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
+        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between relative">
           {/* Logo */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3 z-10">
             <Crown className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-brand-gold shrink-0 drop-shadow-sm" strokeWidth={1.5} />
             <div className="flex flex-col">
               <a href="#" className="font-serif text-base sm:text-lg lg:text-3xl tracking-wide uppercase leading-tight text-white drop-shadow-sm font-medium">
@@ -49,9 +49,9 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
+          {/* Desktop Nav - Centered */}
+          <nav className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2 z-10">
+            <ul className="flex items-center gap-7 xl:gap-9">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a 
@@ -63,10 +63,18 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
+          </nav>
+
+          {/* Desktop Right CTA Button - Visible only after scrolling */}
+          <div className={`hidden lg:flex items-center z-10 transition-all duration-500 ${
+            isScrolled 
+              ? 'opacity-100 pointer-events-auto translate-y-0' 
+              : 'opacity-0 pointer-events-none -translate-y-2'
+          }`}>
             <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" size="sm">
               Book a Consultation
             </Button>
-          </nav>
+          </div>
 
           {/* Mobile Menu Button */}
           <button 
