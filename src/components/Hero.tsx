@@ -1,7 +1,11 @@
-import { Crown } from 'lucide-react';
+import { businessInfo, defaultWhatsAppMessage } from '@/data';
+import { ArrowRight, Crown } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Button } from './ui/Button';
 
 export function Hero() {
+  const whatsappUrl = `https://wa.me/${businessInfo.whatsappNumber}?text=${encodeURIComponent(defaultWhatsAppMessage)}`;
+
   return (
     <section className="relative min-h-screen flex flex-col justify-start md:justify-center overflow-hidden">
       {/* Background Image: Mobile (uploaded portrait) & Desktop (salon interior) */}
@@ -52,6 +56,26 @@ export function Hero() {
           <p className="font-sans text-[11px] sm:text-xs md:text-sm text-white/80 max-w-xs sm:max-w-md font-light leading-relaxed tracking-wide text-center mx-auto drop-shadow-sm">
             Experience exceptional hair artistry, refined grooming, and an atmosphere designed for those who expect more.
           </p>
+
+          {/* CTAs */}
+          <div className="flex flex-row gap-3 sm:gap-4 w-full justify-center items-center mt-5 md:mt-7">
+            <Button 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 sm:px-6 sm:py-3.5 uppercase tracking-wider md:tracking-widest text-[10px] sm:text-xs shrink-0 shadow-md"
+            >
+              Book Appointment
+            </Button>
+            <Button 
+              href="#solutions"
+              variant="outline"
+              icon={ArrowRight}
+              className="px-4 py-2.5 sm:px-6 sm:py-3.5 uppercase tracking-wider md:tracking-widest text-[10px] sm:text-xs !border-white/40 !text-white hover:!bg-white hover:!text-brand-charcoal shrink-0"
+            >
+              Services
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>
