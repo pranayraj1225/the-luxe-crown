@@ -7,7 +7,8 @@ export function Contact() {
   const telUrl = `tel:${businessInfo.phone.replace(/\s/g, '')}`;
 
   return (
-    <section id="contact" className="py-14 md:py-20 bg-brand-ivory border-t border-brand-charcoal/5">
+    <section id="contact" className="py-14 md:py-20 bg-brand-ivory border-t border-brand-charcoal/5 scroll-mt-20 relative">
+      <div id="booking" className="absolute -top-20" />
       <motion.div 
         className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12"
         initial={{ opacity: 0, y: 30 }}
@@ -42,7 +43,14 @@ export function Contact() {
               
               <div>
                 <h4 className="text-[10px] tracking-[0.2em] uppercase text-brand-charcoal/50 mb-1">Location</h4>
-                <p className="text-lg text-brand-charcoal font-light">Kompally, Hyderabad</p>
+                <a 
+                  href={businessInfo.googleMapsUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-lg text-brand-charcoal hover:text-brand-gold transition-colors block font-light"
+                >
+                  Nagole, Hyderabad
+                </a>
                 <p className="text-xs text-brand-charcoal/60 mt-0.5">{businessInfo.hours}</p>
               </div>
             </div>

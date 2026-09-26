@@ -71,7 +71,7 @@ export function Navbar() {
               ? 'opacity-100 pointer-events-auto translate-y-0' 
               : 'opacity-0 pointer-events-none -translate-y-2'
           }`}>
-            <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" size="sm">
+            <Button href="#booking" size="sm">
               Book a Consultation
             </Button>
           </div>

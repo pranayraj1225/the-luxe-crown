@@ -4,15 +4,16 @@ import image2 from './assets/images/regenerated_image_1789296571629.jpg';
 import image3 from './assets/images/regenerated_image_1789296570558.jpg';
 
 export const businessInfo: BusinessInfo = {
-  name: "The Luxe Crown Hair Studio",
+  name: "The Luxe Crown Hair Studio – Nagole",
   phone: "099633 90405",
   whatsapp: "+91 99633 90405",
   whatsappNumber: "919963390405",
-  address: "Plot No. 13A, Lane Number 1, NCL Enclave South, Caton Township, Kompally, Hyderabad, Secunderabad, Telangana 500067",
-  rating: 4.8,
+  address: "The Luxe Crown Hair Studio, Nagole, Hyderabad, Telangana 500068",
+  rating: 4.9,
   reviewCount: 408,
   hours: "Open until 7:00 PM",
-  website: "theluxecrownhairstudio.com"
+  website: "theluxecrownhairstudio.com",
+  googleMapsUrl: "https://www.google.com/maps/place/The+Luxe+Crown+Hair+Studio+%E2%80%93+Nagole/@17.3773892,78.5594036,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb994297ffd755:0x28c570c4c99ec3fa!8m2!3d17.3773892!4d78.5594036!16s%2Fg%2F11nqbl_2q4"
 };
 
 export const defaultWhatsAppMessage = "Hi The Luxe Crown Hair Studio, I would like to know more about your hair replacement services and book a consultation.";

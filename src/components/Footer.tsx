@@ -43,8 +43,12 @@ export function Footer() {
           <div>
             <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-brand-charcoal mb-6">Contact</h4>
             <ul className="space-y-4 font-sans text-sm font-light text-brand-charcoal/60">
-              <li>{businessInfo.phone}</li>
-              <li>{businessInfo.address.split(',').slice(0, 2).join(',')}</li>
+              <li><a href={`tel:${businessInfo.phone.replace(/\s/g, '')}`} className="hover:text-brand-gold transition-colors">{businessInfo.phone}</a></li>
+              <li>
+                <a href={businessInfo.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors block">
+                  {businessInfo.address}
+                </a>
+              </li>
               <li>{businessInfo.website}</li>
             </ul>
           </div>

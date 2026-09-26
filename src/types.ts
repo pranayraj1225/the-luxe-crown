@@ -8,6 +8,7 @@ export interface BusinessInfo {
   reviewCount: number;
   hours: string;
   website: string;
+  googleMapsUrl?: string;
 }
 
 export interface Service {
